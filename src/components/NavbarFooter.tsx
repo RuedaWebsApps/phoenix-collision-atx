@@ -74,23 +74,30 @@ export const Navbar: React.FC<NavProps> = ({ lang, setLang }) => {
         {/* Right Actions: Language Switcher + Phone + CTA */}
         <div className="hidden sm:flex items-center gap-4">
           {/* Bilingual Switcher EN | ES */}
-          <div className="flex items-center text-xs font-mono border border-white/10 rounded-full p-0.5 bg-white/[0.03]">
-            <button
-              onClick={() => setLang('en')}
-              className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${
-                lang === 'en' ? 'bg-white/15 text-white font-bold' : 'text-neutral-500 hover:text-neutral-300'
-              }`}
-            >
-              EN
-            </button>
-            <button
-              onClick={() => setLang('es')}
-              className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${
-                lang === 'es' ? 'bg-white/15 text-white font-bold' : 'text-neutral-500 hover:text-neutral-300'
-              }`}
-            >
-              ES
-            </button>
+          <div className="flex items-center gap-1.5 px-2 py-1 rounded-full border border-white/15 bg-white/[0.06] backdrop-blur-md shadow-sm">
+            <span className="text-[11px] text-neutral-400 font-mono pl-1 hidden md:inline">LANG:</span>
+            <div className="flex items-center text-xs font-mono">
+              <button
+                onClick={() => setLang('en')}
+                className={`px-3 py-1 rounded-full transition-all cursor-pointer font-bold ${
+                  lang === 'en'
+                    ? 'bg-gradient-to-r from-[#E05A2B] to-[#C81D25] text-white shadow-[0_2px_10px_rgba(224,90,43,0.4)]'
+                    : 'text-neutral-400 hover:text-white'
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLang('es')}
+                className={`px-3 py-1 rounded-full transition-all cursor-pointer font-bold ${
+                  lang === 'es'
+                    ? 'bg-gradient-to-r from-[#E05A2B] to-[#C81D25] text-white shadow-[0_2px_10px_rgba(224,90,43,0.4)]'
+                    : 'text-neutral-400 hover:text-white'
+                }`}
+              >
+                ES
+              </button>
+            </div>
           </div>
 
           <a
